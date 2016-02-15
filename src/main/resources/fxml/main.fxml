@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="500.0" minWidth="905.0" prefHeight="500.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="separation.controllers.MainController">
+   <children>
+      <GridPane prefHeight="320.0" prefWidth="905.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="198.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="583.0" minWidth="10.0" prefWidth="368.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="456.0" minWidth="10.0" prefWidth="201.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="456.0" minWidth="10.0" prefWidth="142.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="lblPathSnilsList" text="Путь к файлу списку СНИЛС" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="lblPathOutLoadListSnils" text="Путь к файлу выгрузки">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="lblPathOutDir" text="Путь для выходных данных" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="txtPathOutLoadListSnils" prefHeight="25.0" prefWidth="462.0" promptText="Введите полный путь к файлу" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtPathSnilsList" prefHeight="25.0" prefWidth="223.0" promptText="Введите полный путь к файлу" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtPathOutDir" prefHeight="25.0" prefWidth="223.0" promptText="Введите полный путь к файлу" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <Button fx:id="btnRun" mnemonicParsing="false" onAction="#run" text="Запуск" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Button>
+            <Label text="Чтение данных" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Обработка данных" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Запись результатов" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <ProgressIndicator fx:id="prBarReadData" prefHeight="20.0" prefWidth="20.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets right="250.0" />
+               </padding>
+            </ProgressIndicator>
+            <ProgressIndicator fx:id="prBarWork" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets right="250.0" />
+               </padding>
+            </ProgressIndicator>
+            <ProgressIndicator fx:id="prBarWriteData" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <padding>
+                  <Insets right="250.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </GridPane.margin>
+            </ProgressIndicator>
+            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#run" text="Сброс" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label fx:id="lblLoad1" text="Загружено записей:  " GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin></Label>
+            <Label fx:id="lblLoad2" text="Загружено записей: " GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin></Label>
+            <Label fx:id="lblAllFile1" text="Всего:  " GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="lblAllFile2" text="Всего:  " GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+      </GridPane>
+      <TextArea fx:id="editTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" text="Test">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TextArea>
+   </children>
+</VBox>
